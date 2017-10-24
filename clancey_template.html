@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Clancey's reveal.js presentation template</title>
+
+    <meta name="description" content="A template for presentations">
+    <meta name="author" content="Clancey McNeal">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
+        </section>
+        <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
+        </section>
+        <section data-menu-title="Intro">
+            <aside class="notes">
+              S - B - ESC
+              <ul>
+                <li>Press <strong>ESC</strong> to enter the slide overview.</li>
+                <li>Press <strong>S</strong> to get the presenter view</li>
+            </aside>
+          <h1>Title</h1>
+          <h3>Presentation subtext</h3>
+          <blockquote>
+            &ldquo;Communication is the key to success; however, let's not replace thought with empty talk.&rdquo;
+          </blockquote>
+          <p>
+            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
+          </p>
+        </section>
+
+        <section data-menu-title="Overview">
+          <h2>Overview</h2>
+          <p>
+            A couple of the things we will be covering
+            <ul>
+              <li>First things first</li>
+              <li>Secondly</li>
+              <li>Not forgetting</li>
+            </ul>
+          </p>
+        </section>
+
+        <section data-menu-title="Background">
+          <h2>My background</h2>
+            <small>
+              <dl>
+                <dt class="fragment fade-left">Sales</dt>
+                <dt class="fragment fade-left">Collections</dt>
+                <dt class="fragment fade-left">Customer Relations</dt>
+                <dt class="fragment fade-left">Hardware Testing</dt>
+                <dt class="fragment fade-left">Hardware Programming</dt>
+                <dt class="fragment fade-left">Mainframe Programming</dt>
+                <dt class="fragment fade-left">Web Programming</dt>
+                <dt class="fragment fade-left">Software Quality Assurance</dt>
+                <dt class="fragment fade-left">Security Testing</dt>
+              </dl>
+          </small>
+        </section>
+
+        <section data-menu-title="About">
+          <h2>Currently</h2>
+            <small>
+              <dl>
+                <dt class="fragment fade-right">Test Automation</dt>
+                <dt class="fragment fade-right">Quality Advocate</dt>
+                <dt class="fragment fade-right">Custom Software Development</dt>
+                <dt class="fragment fade-right">Penetration Testing</dt>
+              </dl>
+          </small>
+        </section>
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+          <h2></h2>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Other Info background
+
+            Write content using inline or external Markdown.
+            Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+            ```
+            <section data-markdown>
+              ## Markdown support
+
+              Write content using inline or external Markdown.
+              Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+            </section>
+            ```
+          </script>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: false,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // // Parallax background image
+        // parallaxBackgroundImage: 'images/code_time_fade.jpg',
+        // // Parallax background size
+        // parallaxBackgroundSize: '1024px 1600px', // CSS syntax, e.g. "2100px 900px"
+
+        // // Number of pixels to move the parallax background per slide
+        // // - Calculated automatically unless specified
+        // // - Set to 0 to disable movement along an axis
+        // parallaxBackgroundHorizontal: null,
+        // parallaxBackgroundVertical: null,
+        menu: {
+          markers: true,
+          openSlideNumber: false,
+          transitions: false,
+          themes: [
+            { name: 'Black', theme: 'css/theme/black.css' },
+            { name: 'White', theme: 'css/theme/white.css' },
+            { name: 'League', theme: 'css/theme/league.css' },
+            { name: 'Sky', theme: 'css/theme/sky.css' },
+            { name: 'Beige', theme: 'css/theme/beige.css' },
+            { name: 'Simple', theme: 'css/theme/simple.css' },
+            { name: 'Serif', theme: 'css/theme/serif.css' },
+            { name: 'Blood', theme: 'css/theme/blood.css' },
+            { name: 'Night', theme: 'css/theme/night.css' },
+            { name: 'Moon', theme: 'css/theme/moon.css' },
+            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+          ],
+          custom: [
+            {
+              title: 'Links',
+              icon: '<i class="fa fa-bookmark">',
+              content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="https://github.com/denehyg/reveal.js-menu">Reveal.js-menu</a></li><li class="slide-menu-item"><a href="https://github.com/hakimel/reveal.js">Reveal.js</a></li></ul>' },
+          ]
+        },
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+          // Sampler - code samples from files - https://github.com/ldionne/reveal-sampler
+          { src: 'plugin/sampler/sampler.js' },
+          // Menu - gives a menu to control/navigate the presentation - https://github.com/denehyg/reveal.js-menu
+          { src: 'plugin/menu/menu.js' },
+          // External files - add external files to the presentation - https://github.com/janschoepke/reveal_external
+          {
+            src: 'plugin/external/external.js',
+            condition: function() {
+              return !!document.querySelector( '[data-external],[data-external-replace]' );
+            }
+          }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>So you wanna be a QA?</title>
+
+    <meta name="description" content="What makes a good QA">
+    <meta name="author" content="Clancey McNeal">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+      // https://www.codexworld.com/create-digital-clock-with-date-javascript/
+      function startTime() {
+          var today = new Date();
+          var hr = today.getHours();
+          var min = today.getMinutes();
+          var sec = today.getSeconds();
+          ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+          hr = (hr == 0) ? 12 : hr;
+          hr = (hr > 12) ? hr - 12 : hr;
+          //Add a zero in front of numbers<10
+          hr = checkTime(hr);
+          min = checkTime(min);
+          sec = checkTime(sec);
+          document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          var curWeekDay = days[today.getDay()];
+          var curDay = today.getDate();
+          var curMonth = months[today.getMonth()];
+          var curYear = today.getFullYear();
+          var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+          document.getElementById("date").innerHTML = date;
+
+          var time = setTimeout(function(){ startTime() }, 500);
+      }
+      function checkTime(i) {
+          if (i < 10) {
+              i = "0" + i;
+          }
+          return i;
+      }
+
+    </script>
+
+    <style>
+      .slides .header{
+        position:absolute;
+        text-align:center;
+        vertical-align: top;
+      }
+      .slides .footer{
+        position: absolute;
+        bottom: -3%;
+        right: 0%;
+      }
+    </style>
+
+    <style>
+      .reveal tiny {
+        display: inline-block;
+        font-size: 0.3em;
+        line-height: 0.6em;
+        vertical-align: top;
+        opacity: 0.5; }
+
+      .reveal tiny * {
+        vertical-align: top; }
+
+      .clockdate-wrapper {
+          background-color: transparent;
+          padding:25px;
+          max-width:350px;
+          width:100%;
+          text-align:center;
+          border-radius:5px;
+          margin:0 auto;
+          margin-top:15%;
+      }
+      #clock{
+          background-color: transparent;
+          font-family: sans-serif;
+          font-size:60px;
+          text-shadow:0px 0px 1px #fff;
+          color:#fff;
+      }
+      #clock span {
+          color:#888;
+          text-shadow:0px 0px 1px #333;
+          font-size:30px;
+          position:relative;
+          top:-27px;
+          left:-10px;
+      }
+      #date {
+          letter-spacing:10px;
+          font-size:14px;
+          font-family:arial,sans-serif;
+          color:#fff;
+      }
+      div.clock {
+          position: relative;
+          -webkit-animation: clock 180s ease-in-out alternate infinite;
+          animation: clock 180s ease-in-out alternate infinite;
+      }
+
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes clock {
+          0%   {left:0px;   top:-200px;}
+          25%  {left:500px; top:-200px;}
+          50%  {left:500px; top:200px;}
+          75%  {left:0px;   top:200px;}
+          100% {left:0px;   top:-200px;}
+      }
+
+      /* Standard syntax */
+      @keyframes clock {
+          0%   {left:0px;   top:-200px;}
+          25%  {left:500px; top:-200px;}
+          50%  {left:500px; top:200px;}
+          75%  {left:0px;   top:200px;}
+          100% {left:0px;   top:-200px;}
+      }
+    </style>
+  </head>
+
+  <body onload="startTime()">
+    <div class="reveal">
+      <div class="slides">
+<!--       <div class="header">
+        <tiny>Copyright ©2014 MyCompany, Inc.</tiny>
+      </div> -->
+      <div class="footer">
+        <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
+      </div>
+        <section data-menu-title="Start">
+            <aside class="notes">
+              S - B - ESC
+              <ul>
+                <li>Press <strong>ESC</strong> to enter the slide overview.</li>
+                <li>Press <strong>S</strong> to get the presenter view</li>
+                <li><a href='https://www.w3schools.com/colors/tryit.asp?filename=trycolors_palettes5'>color palette</a></li>
+              </ul>
+            </aside>
+
+          <div id="clockdate" class="clock">
+            <div class="clockdate-wrapper">
+              <div id="clock"></div>
+              <div id="date"></div>
+              <tiny><br>Clancey@<b><span style="color:#33ff66">injinia</span>.com</b></tiny>
+            </div>
+          </div>
+        </section>
+
+<!--         <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
+        </section>
+
+        <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
+        </section> -->
+
+        <section data-menu-title="Intro">
+          <h1>Quality Assurance</h1>
+          <h3>Welcome to the dark side?</h3>
+          <blockquote>
+            &ldquo;Testers don’t break software,<br>software is already broken.<br>— Amir Gahrai&rdquo;
+          </blockquote>
+          <p>
+            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
+          </p>
+        </section>
+
+        <section data-menu-title="Overview">
+          <h2>Overview</h2>
+          <p>
+            A couple of the things we will be covering
+            <ul>
+              <li>What is quality assurance</li>
+              <li>What are good skills to have</li>
+              <li>How to get into QA</li>
+            </ul>
+          </p>
+        </section>
+
+        <section data-menu-title="Background">
+          <h2><i class="fa fa-user fa-fw"></i> My background</i></h2>
+            <small>
+              <table>
+                <tr>
+                  <th><i class="fa fa-reply" aria-hidden="true"></i> Previous</th>
+                  <th><i class="fa fa-share" aria-hidden="true"></i> Current</th>
+                </tr>
+                <tr>
+                  <td width="60%">
+                    <dl class="fragment fade-left">
+                      <dt>Sales</dt>
+                      <dt>Collections</dt>
+                      <dt>Customer Relations</dt>
+                      <dt>Hardware Testing</dt>
+                      <dt>Hardware Programming</dt>
+                      <dt>Mainframe Programming</dt>
+                      <dt>Project Management</dt>
+                      <dt>Web Programming</dt>
+                      <dt>Business Analysis</dt>
+                      <dt>Software Quality Assurance</dt>
+                      <dt>Security Testing</dt>
+                      <dt>
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\shaw.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\overwaitea.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\jpl.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\fcc.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\csa.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\etc.png">
+<!--                       </dt>
+                      <dt> -->
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\milspec.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\mpb.gif">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\oi.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\do2.gif">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\oildex.png">
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\adp.png">
+<!--                       </dt>
+                      <dt> -->
+                        <img style="background:transparent;border: 4px solid #222;" height="20px" data-src="images\nortel.gif">
+                        <img style="background:transparent;border: 4px solid #222;" height="18px" data-src="images\forcesca.png">
+                      </dt>
+                    </dl>
+                  </td>
+                  <td>
+                    <dl class="fragment fade-right">
+                      <dt><img style="background-color:#ffffff" height="30px" data-src="images\vintri-logo_1.png"></dt>
+                        <dd>Quality Advocate</dd>
+                        <dd>Test Automation</dd>
+                        <dd>Policy/Procedure</dd>
+                        <dd>SOC Audit</dd>
+                      <dt><img style="background:transparent;border: 4px solid #222;" height="30px" data-src="images\injinia.png"></dt>
+                        <dd>Software Development</dd>
+                        <dd>Management/QA Consulting</dd>
+                        <dd>Automation Training</dd>
+                        <dd>Test Automation</dd>
+                        <dd>Penetration Testing</dd>
+                    </dl>
+                  </td>
+                </tr>
+              </table>
+          </small>
+        </section>
+
+        <section data-menu-title="What's QA?" data-transition="slide" data-background="#618685" data-background-transition="zoom">
+          <h2>So, what is QA?</h2>
+          <p class="fragment fade-down">
+            Executing manual, pre-defined steps from pre-determined lists of scripted checks that will test all possibilities, inputs, and outcomes to make sure that there are no bugs in the software.
+          </p>
+          <p class="fragment fade-up">
+            <b>Good luck with that!</b> If you can predict all of the places that the bugs will be before hand, why not prevent them from happening in the first place?
+          </p>
+        </section>
+
+        <section data-menu-title="QA is..." data-transition="slide" data-background="#618685">
+          <h2>QA is</h2>
+          <ul>
+            <li>Asking questions, not just about software functionality</li>
+            <li>Working on the whole process, inception to delivery</li>
+            <li>Helping to prevent issues before they happen</li>
+            <li>Helping to keep things working as expected</li>
+            <li class="fragment fade-right"><b>Everyone's responsibility</b></li>
+          </ul>
+        </section>
+
+        <section data-menu-title="QA is not" data-transition="zoom" data-background="#36486b" data-background-transition="fade">
+          <h2>QA is not</h2>
+          <ul>
+            <li>Criticizing or attacking</li>
+            <li>Blocking progress</li>
+            <li>Eliminating all bugs</li>
+            <li>Preventing failure</li>
+          </ul>
+        </section>
+
+        <section data-menu-title="Nor is it" data-transition="zoom" data-background="#36486b">
+          <h2>Nor is it</h2>
+          <ul>
+            <li>..always easy</li>
+            <small><blockquote><i class="fa fa-tree" aria-hidden="true"></i> Can't see the forest for the trees <i class="fa fa-tree" aria-hidden="true"></i></blockquote></small>
+            <li>..for everyone</li>
+            <li>..an assurance of success</li>
+            <li>..an after thought</li>
+          </ul>
+          <h3 class="fragment zoom">An option!</h3>
+        </section>
+
+        <section data-menu-title="QA requires" data-transition="slide" data-background="#80ced6" data-background-transition="slide-down">
+          <h2>Skills & Abilities</h2>
+          <h4>What makes a good QA?</h4>
+          <ul>
+            <li><i class="fa fa-comments-o"></i> Communication</li>
+            <li>Ability to see issues</li>
+            <li><i class="fa fa-users"></i> Collaboration</li>
+            <li>Varied experience</li>
+            <li><i class="fa fa-phone"></i> Communication</li>
+            <li>Curiosity</li>
+            <li>Courage</li>
+            <li class="fragment fade-left"><i class="fa fa-weixin"></i> Communication</li>
+          </ul>
+        </section>
+
+        <section data-menu-title="Test types">
+          <h2>Types of testing</h2>
+          <ul>
+            <li class="fragment fade">User Experience/Accessibility</li>
+            <li class="fragment fade">Stress/Performance/Load</li>
+            <li class="fragment fade">Risk based</li>
+            <li class="fragment fade">Security</li>
+            <li class="fragment fade">Integration</li>
+            <li class="fragment fade">Specification</li>
+            <li class="fragment fade">Standards Based</li>
+            <li class="fragment fade">Model Based</li>
+            <li class="fragment fade">End-to-end</li>
+            <li class="fragment fade">Regression</li>
+          </ul>
+        </section>
+
+        <section data-markdown data-menu-title="Starting out">
+          <h2>How do I get into this gig?</h2>
+          ```
+          Learn software development
+          Learn about software requirements
+          Learn about the full lifecycle
+          Learn about the users
+          Learn about psychology
+          Play, poke, prod, don't be afraid to try
+          Fail
+          ```
+        </section>
+
+        <section data-markdown data-menu-title="Next">
+          <script type="text/template">
+            <h2>Where to go from here?</h2>
+            * Software Quality Discussion Group
+             - [sqdg.ca](http://sqdg.ca)
+             - [sqdg.slack.com](https://sqdg.slack.com)
+            * [Ministry of Testing](https://www.ministryoftesting.com/)
+            * [Utest](https://www.utest.com/)
+            * [PQA](http://www.pqatesting.com/)
+          </script>
+        </section>
+
+<!--         <section data-menu-title="Next time" data-background-image="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/05/1432498566fb_invalid_input_test-compressor.gif">
+        <!-- <section data-menu-title="Next time" data-background-image="images\webdriver.gif"> -->
+        <section data-menu-title="Next time" data-background-image="https://raw.githubusercontent.com/pluralsight/guides/master/images/a0003e9e-8d43-4517-bb37-a694cad37d42.gif">
+        <!-- <section data-menu-title="Next time" data-background-image="images\webdriver.gif"> -->
+          <h1 style="background-color:#36486b">Automation!</h1>
+          <span style="float: right"><img height='240px' data-src="images\writing_code.gif">
+          <blockquote style="background-color:#36486b">Don't re-test yourself - <b>D.R.Y.</b></blockquote></span>
+        </section>
+
+        <section data-markdown data-menu-title="Questions">
+          <h1>Thank you!</h1>
+          ```
+          Questions?:> _
+          ```
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: false,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // // Parallax background image
+        // parallaxBackgroundImage: 'images/code_time_fade.jpg',
+        // // Parallax background size
+        // parallaxBackgroundSize: '1024px 1600px', // CSS syntax, e.g. "2100px 900px"
+
+        // // Number of pixels to move the parallax background per slide
+        // // - Calculated automatically unless specified
+        // // - Set to 0 to disable movement along an axis
+        // parallaxBackgroundHorizontal: null,
+        // parallaxBackgroundVertical: null,
+        menu: {
+          markers: true,
+          openSlideNumber: false,
+          transitions: false,
+          hideMissingTitles: true,
+          themes: [
+            { name: 'Black', theme: 'css/theme/black.css' },
+            { name: 'White', theme: 'css/theme/white.css' },
+            { name: 'League', theme: 'css/theme/league.css' },
+            { name: 'Sky', theme: 'css/theme/sky.css' },
+            { name: 'Beige', theme: 'css/theme/beige.css' },
+            { name: 'Simple', theme: 'css/theme/simple.css' },
+            { name: 'Serif', theme: 'css/theme/serif.css' },
+            { name: 'Blood', theme: 'css/theme/blood.css' },
+            { name: 'Night', theme: 'css/theme/night.css' },
+            { name: 'Moon', theme: 'css/theme/moon.css' },
+            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+          ],
+          custom: [
+            {
+              title: 'Links',
+              icon: '<i class="fa fa-bookmark">',
+              content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="https://github.com/denehyg/reveal.js-menu">Reveal.js-menu</a></li><li class="slide-menu-item"><a href="https://github.com/hakimel/reveal.js">Reveal.js</a></li></ul>' },
+          ]
+        },
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+          // Sampler - code samples from files - https://github.com/ldionne/reveal-sampler
+          { src: 'plugin/sampler/sampler.js' },
+          // Menu - gives a menu to control/navigate the presentation - https://github.com/denehyg/reveal.js-menu
+          { src: 'plugin/menu/menu.js' },
+          // External files - add external files to the presentation - https://github.com/janschoepke/reveal_external
+          {
+            src: 'plugin/external/external.js',
+            condition: function() {
+              return !!document.querySelector( '[data-external],[data-external-replace]' );
+            }
+          }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
