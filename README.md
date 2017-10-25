@@ -4,7 +4,7 @@ Collection of presentations, under VCS to keep track and take advantage fo GitPa
 
 ## Viewing
 
-[View presentaions](cmcneal.github.io/presentations/index.html)
+[View presentaions](https://cmcneal.github.io/presentations/index.html#/)
 
 ## Built With
 
