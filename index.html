@@ -15,47 +15,6 @@
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-      // https://www.codexworld.com/create-digital-clock-with-date-javascript/
-      function startTime() {
-          var today = new Date();
-          var hr = today.getHours();
-          var min = today.getMinutes();
-          var sec = today.getSeconds();
-          ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
-          hr = (hr == 0) ? 12 : hr;
-          hr = (hr > 12) ? hr - 12 : hr;
-          //Add a zero in front of numbers<10
-          hr = checkTime(hr);
-          min = checkTime(min);
-          sec = checkTime(sec);
-          document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
-
-          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-          var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-          var curWeekDay = days[today.getDay()];
-          var curDay = today.getDate();
-          var curMonth = months[today.getMonth()];
-          var curYear = today.getFullYear();
-          var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
-          document.getElementById("date").innerHTML = date;
-
-          var time = setTimeout(function(){ startTime() }, 500);
-      }
-      function checkTime(i) {
-          if (i < 10) {
-              i = "0" + i;
-          }
-          return i;
-      }
-
-    </script>
 
     <style>
       .slides .header{
@@ -156,8 +115,10 @@
         <section data-menu-title="SQDG">
           <ul class="blockquote">
             <li><b>SQDG</b></li>
-            <li><a href="automation_showcase.html">2017 Automation Showcase</a></li>
-            <li><a href="explorers.html">Exploratory Testing</a></li>
+            <li><a href="sqdg_2017_kickoff.html">2016/2017 Kick-off</a></li>
+            <li><a href="sqdg_2017_chat.html">Chat</a></li>
+            <li><a href="sqdg_2017_automation_showcase.html">2017 Automation Showcase</a> - <a href="SQDG_2017_Automation_Showcase-Clancey_McNeal.pdf">PDF</a></li>
+            <li><a href="sqdg_2017_exploring_exploratory_testing.html">Exploratory Testing</a> - <a href="sqdg_2017_exploring_exploratory_testing-Clancey_McNeal.pdf">PDF</a></li>
           </ul>
         </section>
 
