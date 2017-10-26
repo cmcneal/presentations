@@ -27,78 +27,31 @@
         bottom: -3%;
         right: 0%;
       }
-    </style>
-
-    <style>
       .reveal tiny {
         display: inline-block;
         font-size: 0.3em;
         line-height: 0.6em;
         vertical-align: top;
-        opacity: 0.5; }
-
+        opacity: 0.5;
+      }
       .reveal tiny * {
-        vertical-align: top; }
-
-      .clockdate-wrapper {
-          background-color: transparent;
-          padding:25px;
-          max-width:350px;
-          width:100%;
-          text-align:center;
-          border-radius:5px;
-          margin:0 auto;
-          margin-top:15%;
+        vertical-align: top;
       }
-      #clock{
-          background-color: transparent;
-          font-family: sans-serif;
-          font-size:60px;
-          text-shadow:0px 0px 1px #fff;
-          color:#fff;
+      #headerBar {
+        height: 7px;
+        background: #42affa;
       }
-      #clock span {
-          color:#888;
-          text-shadow:0px 0px 1px #333;
-          font-size:30px;
-          position:relative;
-          top:-27px;
-          left:-10px;
-      }
-      #date {
-          letter-spacing:10px;
-          font-size:14px;
-          font-family:arial,sans-serif;
-          color:#fff;
-      }
-      div.clock {
-          position: relative;
-          -webkit-animation: clock 180s ease-in-out alternate infinite;
-          animation: clock 180s ease-in-out alternate infinite;
-      }
-
-      /* Safari 4.0 - 8.0 */
-      @-webkit-keyframes clock {
-          0%   {left:0px;   top:-200px;}
-          25%  {left:500px; top:-200px;}
-          50%  {left:500px; top:200px;}
-          75%  {left:0px;   top:200px;}
-          100% {left:0px;   top:-200px;}
-      }
-
-      /* Standard syntax */
-      @keyframes clock {
-          0%   {left:0px;   top:-200px;}
-          25%  {left:500px; top:-200px;}
-          50%  {left:500px; top:200px;}
-          75%  {left:0px;   top:200px;}
-          100% {left:0px;   top:-200px;}
+      #footerBar {
+        height: 7px;
+        background: dimgray;
       }
     </style>
   </head>
 
   <body>
     <div class="reveal">
+    <div id="headerBar"></div>
+    <div id="footerBar"></div>
       <div class="slides">
         <div class="footer">
           <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
@@ -108,26 +61,26 @@
           <h1>Presentations</h1>
           <h2>A list of presentations by Clancey</h2>
           <p>
-            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
+            <small>Created by Clancey@<a href="http://injinia.com">injinia</a></small>
           </p>
         </section>
 
         <section data-menu-title="SQDG">
-          <ul class="blockquote">
-            <li><b>SQDG</b></li>
-            <li><a href="sqdg_2017_kickoff.html">2016/2017 Kick-off</a></li>
-            <li><a href="sqdg_2017_chat.html">Chat</a></li>
-            <li><a href="sqdg_2017_automation_showcase.html">2017 Automation Showcase</a> - <a href="SQDG_2017_Automation_Showcase-Clancey_McNeal.pdf">PDF</a></li>
-            <li><a href="sqdg_2017_exploring_exploratory_testing.html">Exploratory Testing</a> - <a href="sqdg_2017_exploring_exploratory_testing-Clancey_McNeal.pdf">PDF</a></li>
-          </ul>
+          <dl style="background-color: rgba(255,255,255,.15); padding: 25px">
+            <dt><b>SQDG</b></dt>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="sqdg_2017_kickoff.html">2016/2017 Kick-off</a></dd>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="sqdg_2017_chat.html">Chat</a></dd>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="sqdg_2017_automation_showcase.html">2017 Automation Showcase</a> - <a href="SQDG_2017_Automation_Showcase-Clancey_McNeal.pdf">PDF</a></dd>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="sqdg_2017_exploring_exploratory_testing.html">Exploratory Testing</a> - <a href="sqdg_2017_exploring_exploratory_testing-Clancey_McNeal.pdf">PDF</a></dd>
+          </dl>
         </section>
 
         <section data-menu-title="BVC">
-          <ul class="blockquote">
-            <li><b>BowValley College</b></li>
-            <li><a href="quality_assurance.html">Quality Assurance</a></li>
-            <li><a href="test_automation.html">Test Automation</a></li>
-          </ul>
+          <dl style="background-color: rgba(255,255,255,.15); padding: 25px">
+            <dt><b>BowValley College</b></dt>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="quality_assurance.html">Quality Assurance</a></dd>
+            <dd><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="test_automation.html">Test Automation</a></dd>
+          </dl>
         </section>
 
       </div>

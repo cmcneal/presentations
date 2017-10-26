@@ -14,38 +14,184 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css" id="theme">
     <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+      // https://www.codexworld.com/create-digital-clock-with-date-javascript/
+      function startTime() {
+          var today = new Date();
+          var hr = today.getHours();
+          var min = today.getMinutes();
+          var sec = today.getSeconds();
+          ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+          hr = (hr == 0) ? 12 : hr;
+          hr = (hr > 12) ? hr - 12 : hr;
+          //Add a zero in front of numbers<10
+          hr = checkTime(hr);
+          min = checkTime(min);
+          sec = checkTime(sec);
+          document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+          var curWeekDay = days[today.getDay()];
+          var curDay = today.getDate();
+          var curMonth = months[today.getMonth()];
+          var curYear = today.getFullYear();
+          var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+          document.getElementById("date").innerHTML = date;
+
+          var time = setTimeout(function(){ startTime() }, 500);
+      }
+      function checkTime(i) {
+          if (i < 10) {
+              i = "0" + i;
+          }
+          return i;
+      }
+
     </script>
+
+    <style>
+      .slides .header{
+        position: absolute;
+        text-align: center;
+        vertical-align: top;
+      }
+      .slides .footer{
+        position: absolute;
+        bottom: -3%;
+        right: 0%;
+      }
+      #headerBar {
+        height: 7px;
+        background: #42affa;
+      }
+      #footerBar {
+        height: 7px;
+        background: dimgray;
+      }
+      .reveal tiny {
+        display: inline-block;
+        font-size: 0.3em;
+        line-height: 0.6em;
+        vertical-align: top;
+        opacity: 0.5;
+      }
+      .reveal tiny * {
+        vertical-align: top;
+      }
+
+      /*Clock*/
+      .clockdate-wrapper {
+        background-color: transparent;
+        padding: 25px;
+        max-width: 350px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 15%;
+      }
+      #clock{
+        background-color: transparent;
+        font-family: sans-serif;
+        font-size: 60px;
+        text-shadow: 0px 0px 1px #fff;
+        color: #fff;
+      }
+      #clock span {
+        color: #888;
+        text-shadow: 0px 0px 1px #333;
+        font-size: 30px;
+        position: relative;
+        top: -27px;
+        left: -10px;
+      }
+      #date {
+        letter-spacing: 10px;
+        font-size: 14px;
+        font-family: arial, sans-serif;
+        color: #fff;
+      }
+      div.clock {
+        position: relative;
+        -webkit-animation: clock 180s ease-in-out alternate infinite;
+        animation: clock 180s ease-in-out alternate infinite;
+      }
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes clock {
+        0%   {left:0px;   top:-200px;}
+        25%  {left:500px; top:-200px;}
+        50%  {left:500px; top:200px;}
+        75%  {left:0px;   top:200px;}
+        100% {left:0px;   top:-200px;}
+      }
+      /* Standard syntax */
+      @keyframes clock {
+        0%   {left:0px;   top:-200px;}
+        25%  {left:500px; top:-200px;}
+        50%  {left:500px; top:200px;}
+        75%  {left:0px;   top:200px;}
+        100% {left:0px;   top:-200px;}
+      }
+    </style>
   </head>
 
-  <body>
-
+  <body onload="startTime()">
+    <div id="headerBar"></div>
+    <div id="footerBar"></div>
     <div class="reveal">
       <div class="slides">
-        <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
+        <div class="footer">
+          <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
+        </div>
+        <section data-menu-title="Start">
+          <aside class="notes">
+            S - B - ESC
+            <ul>
+              <li>Press <strong>ESC</strong> to enter the slide overview.</li>
+              <li>Press <strong>S</strong> to get the presenter view</li>
+              <li><a href='https://www.w3schools.com/colors/tryit.asp?filename=trycolors_palettes5'>color palette</a></li>
+            </ul>
+          </aside>
+
+          <div id="clockdate" class="clock">
+            <div class="clockdate-wrapper">
+              <div id="clock"></div>
+              <div id="date"></div>
+              <tiny><br>Clancey@<b><span style="color:#33ff66">injinia</span>.com</b></tiny>
+            </div>
+          </div>
         </section>
-        <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
-        </section>
+
         <section data-menu-title="Intro">
-            <aside class="notes">
-              S - B - ESC
-              <ul>
-                <li>Press <strong>ESC</strong> to enter the slide overview.</li>
-                <li>Press <strong>S</strong> to get the presenter view</li>
-            </aside>
-          <h1>Title</h1>
-          <h3>Presentation subtext</h3>
+          <h1>Automation</h1>
           <blockquote>
-            &ldquo;Communication is the key to success; however, let's not replace thought with empty talk.&rdquo;
+            D.R.Y. Don't repeat yourself!
           </blockquote>
-          <p>
-            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
-          </p>
+          <blockquote>
+            &ldquo;Make things as simple as possible, but no simpler.&ldquo; - Einstein
+          </blockquote>
+          <!--  <p>
+            <small>Created by Clancey@<a href="http://injinia.com" style="color:#33ff66">injinia</a>.com</small>
+          </p> -->
+        </section>
+
+        <section data-menu-title="Overview">
+          <h2>Overview</h2>
+          <ul>
+            <li>Planning</li>
+            <li>Technology</li>
+            <li>Resources</li>
+            <li>Reporting</li>
+            <li>Examples</li>
+          </ul>
         </section>
 
         <section data-menu-title="Overview">
@@ -58,6 +204,11 @@
               <li>Not forgetting</li>
             </ul>
           </p>
+        </section>
+
+        <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
+        </section>
+        <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
         </section>
 
         <section data-menu-title="Background">
