@@ -1,5 +1,3 @@
-# automation planning
-
 ## Frameworks
 - configure (browser etc.)
 - setup (date etc.)
@@ -8,13 +6,17 @@
 - teardown
 - cleanup
 
+---
+
 ## Do clients need to see it?
 - Should be able to show your tests to someone, your manager? and they should be able to read it, without having to know how to code
 - you can do this by using something like cucumber, spec, etc
 - to do this well you need to abstract things out to page objects, models, etc and have data sources external to your tests
 
-for example
-instead of
+---
+
+### If you do, make sure it's readable
+For example, instead of
 ```ruby
 it 'Allows users to sign up' do
   fname = Faker::FirstName.new
@@ -47,6 +49,8 @@ it 'Allows users to sign up' do
 end
 ```
 
+---
+
 use
 ```ruby
 it 'Allows users to sign up' do
@@ -68,9 +72,16 @@ Class UserManager
 end
 ```
 
+---
 
 ## Reporting
 
+---
+
 ## Acting on errors
 
+---
+
 ## Maintenence
+
+---
