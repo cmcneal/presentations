@@ -3,7 +3,7 @@
 - setup (date etc.)
 - action
 - test (assertions)
-- teardown
+- tear-down
 - cleanup
 
 ---
@@ -56,19 +56,9 @@ use
 it 'Allows users to sign up' do
   user = UserManager.create
   visit(SignUpPage)
-  SignUp(user)
-  verify(UserSignedUp?(user) == true)
+  sign_up(user)
+  verify_user_signed_up?(user) == true
   UserManager.remove(user)
-end
-
-Class UserManager
-  def self.create
-    Faker::User.new
-  end
-
-  def remove(user)
-    RestClient::Delete(USER_MANAGEMENT_API_URL, user['UserName'])
-  end
 end
 ```
 
@@ -82,6 +72,6 @@ end
 
 ---
 
-## Maintenence
+## Maintenance
 
 ---
