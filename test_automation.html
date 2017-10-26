@@ -68,6 +68,14 @@
         bottom: -3%;
         right: 0%;
       }
+      #headerBar {
+        height: 7px;
+        background: #42affa;
+      }
+      #footerBar {
+        height: 7px;
+        background: dimgray;
+      }
     </style>
 
     <style>
@@ -139,24 +147,67 @@
   </head>
 
   <body onload="startTime()">
+    <div id="headerBar"></div>
+    <div id="footerBar"></div>
     <div class="reveal">
       <div class="slides">
         <div class="footer">
           <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
         </div>
+        <section data-menu-title="Start">
+          <aside class="notes">
+            S - B - ESC
+            <ul>
+              <li>Press <strong>ESC</strong> to enter the slide overview.</li>
+              <li>Press <strong>S</strong> to get the presenter view</li>
+              <li><a href='https://www.w3schools.com/colors/tryit.asp?filename=trycolors_palettes5'>color palette</a></li>
+            </ul>
+          </aside>
+
+          <div id="clockdate" class="clock">
+            <div class="clockdate-wrapper">
+              <div id="clock"></div>
+              <div id="date"></div>
+              <tiny><br>Clancey@<b><span style="color:#33ff66">injinia</span>.com</b></tiny>
+            </div>
+          </div>
+        </section>
 
         <section data-menu-title="Intro">
           <h1>Automation</h1>
           <h2>Automating your tests</h2>
           <blockquote>Don't repeat yourself!</blockquote>
           <blockquote>Make things as simple as possible, but no simpler. - Einstein</blockquote>
-          <p>
-            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
-          </p>
+<!--           <p>
+            <small>Created by Clancey@<a href="http://injinia.com" style="color:#33ff66">injinia</a>.com</small>
+          </p> -->
         </section>
 
         <section data-menu-title="Overview">
-          <h2>In Progress</h2>
+          <h2>Overview</h2>
+          <ul>
+            <li>Planning</li>
+            <li>Technology</li>
+            <li>Resources</li>
+            <li>Reporting</li>
+            <li>Examples</li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section data-menu-title="Why automation?">
+          <h2>Why automate?</h2>
+          <table>
+            <tr><th>Because</th><th>Not</th></tr>
+            <tr><td>a</td><td>1</td></tr>
+            <tr><td>b</td><td>2</td></tr>
+          </table>
+        </section>
+
+        <section data-menu-title="Automation Planning" data-markdown>
+        </section>
+
+        <section data-menu-title="Automation Planning" data-markdown>
         </section>
 
       </div>

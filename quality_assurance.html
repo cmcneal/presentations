@@ -68,6 +68,14 @@
         bottom: -3%;
         right: 0%;
       }
+      #headerBar {
+        height: 7px;
+        background: #42affa;
+      }
+      #footerBar {
+        height: 7px;
+        background: dimgray;
+      }
     </style>
 
     <style>
@@ -139,23 +147,22 @@
   </head>
 
   <body onload="startTime()">
+    <div id="headerBar"></div>
+    <div id="footerBar"></div>
     <div class="reveal">
       <div class="slides">
-<!--       <div class="header">
-        <tiny>Copyright ©2014 MyCompany, Inc.</tiny>
-      </div> -->
-      <div class="footer">
-        <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
-      </div>
+        <div class="footer">
+          <tiny>&copy;2017 <b><span style="color:#33ff66">injinia</span></b></tiny>
+        </div>
         <section data-menu-title="Start">
-            <aside class="notes">
-              S - B - ESC
-              <ul>
-                <li>Press <strong>ESC</strong> to enter the slide overview.</li>
-                <li>Press <strong>S</strong> to get the presenter view</li>
-                <li><a href='https://www.w3schools.com/colors/tryit.asp?filename=trycolors_palettes5'>color palette</a></li>
-              </ul>
-            </aside>
+          <aside class="notes">
+            S - B - ESC
+            <ul>
+              <li>Press <strong>ESC</strong> to enter the slide overview.</li>
+              <li>Press <strong>S</strong> to get the presenter view</li>
+              <li><a href='https://www.w3schools.com/colors/tryit.asp?filename=trycolors_palettes5'>color palette</a></li>
+            </ul>
+          </aside>
 
           <div id="clockdate" class="clock">
             <div class="clockdate-wrapper">
@@ -166,20 +173,20 @@
           </div>
         </section>
 
-<!--         <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
-        </section>
+        <!--  <section data-background-image="https://i.giphy.com/media/1q24y15S8DIcw/giphy.webp">
+        </section> -->
 
-        <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
+        <!--  <section data-background-image="https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif">
         </section> -->
 
         <section data-menu-title="Intro">
           <h1>Quality Assurance</h1>
           <h3>Welcome to the dark side?</h3>
           <blockquote>
-            &ldquo;Testers don’t break software,<br>software is already broken.<br>— Amir Gahrai&rdquo;
+            &ldquo;Testers don’t break software,<br>software is already broken.&rdquo;<br>Amir Gahrai
           </blockquote>
           <p>
-            <small>Created by <a href="http://injinia.com">Clancey</a> @ <a href="http://injinia.com">injinia</a></small>
+            <small>Created by Clancey@<a href="http://injinia.com" style="color:#33ff66">injinia</a></small>
           </p>
         </section>
 
