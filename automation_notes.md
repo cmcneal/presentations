@@ -63,15 +63,3 @@ end
 ```
 
 ---
-
-## Reporting
-
----
-
-## Acting on errors
-
----
-
-## Maintenance
-
----
